@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { ThemeProvider } from "@/components/theme";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 import { ReduxProvider } from "@/redux/provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Poppins } from "next/font/google";
