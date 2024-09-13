@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import { ThemeProvider } from "@/components/theme";
+import { ReduxProvider } from "@/redux/provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Poppins } from "next/font/google";
+import { Toaster } from "sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,8 +26,18 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={`${poppins.variable} antialiased`}>{children}</body>
+      <html lang="fr">
+        <body className={`${poppins.variable} antialiased`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ReduxProvider>{children}</ReduxProvider>
+            <Toaster expand />
+          </ThemeProvider>
+        </body>
       </html>
     </ClerkProvider>
   );
