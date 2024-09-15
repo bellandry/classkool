@@ -29,7 +29,7 @@ export default function RootLayout({
       <ClerkProvider>
         <GoogleOneTap />
         <body
-          className={`${poppins.variable} antialiased dark:bg-gray-950 bg-slate-100 text-gray-950 dark:text-slate-200`}
+          className={`${poppins.variable} antialiased dark:bg-gray-950/60 bg-slate-100 text-gray-950 dark:text-slate-200`}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <ReduxProvider>{children}</ReduxProvider>

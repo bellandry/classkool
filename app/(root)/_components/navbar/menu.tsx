@@ -21,7 +21,7 @@ export const Menu = ({ orientation }: MenuProps) => {
 
   if (orientation === "desktop") {
     return (
-      <Card className="bg-slate-100 dark:bg-gray-950 dark:text-slate-100 ring-1 dark:ring-gray-800 ring-slate-300 bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-60 p-1 hidden lg:flex rounded-xl">
+      <Card className="bg-slate-100 dark:bg-gray-950/30 dark:text-slate-100 ring-1 dark:ring-gray-800 ring-slate-300 bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-60 p-1 hidden lg:flex rounded-xl">
         <CardContent className="p-0 flex gap-2">
           {CONSTANTS.landingPageMenu.map((menuItem) => (
             <Link
@@ -30,9 +30,9 @@ export const Menu = ({ orientation }: MenuProps) => {
                 onClick: () => onSetSection(menuItem.link),
               })}
               className={cn(
-                "rounded-lg flex gap-2 py-2 px-4 items-center hover:bg-slate-200 hover:dark:bg-slate-800 hover:ring-1 hover:dark:ring-slate-700 transition-all",
+                "rounded-lg flex gap-2 py-2 px-4 items-center hover:bg-slate-200 hover:dark:bg-slate-800 hover:ring-1 hover:ring-gray-500/50 hover:dark:ring-slate-700 transition-all",
                 section === menuItem.link
-                  ? "bg-slate-200 dark:bg-slate-800 ring-1 dark:ring-slate-700"
+                  ? "bg-slate-300/50 dark:bg-slate-800 ring-1 ring-gray-500/50 dark:ring-slate-700"
                   : ""
               )}
               key={menuItem.id}
@@ -60,9 +60,9 @@ export const Menu = ({ orientation }: MenuProps) => {
               },
             })}
             className={cn(
-              "rounded-lg flex gap-2 py-2 px-4 items-center hover:bg-slate-200 hover:dark:bg-slate-800 hover:ring-1 hover:dark:ring-slate-700 transition-all",
+              "rounded-lg flex gap-2 py-2 px-4 items-center hover:bg-slate-200 hover:dark:bg-slate-800 hover:ring-1 hover:ring-gray-500/50 hover:dark:ring-slate-700 transition-all",
               section === menuItem.link
-                ? "bg-slate-200 dark:bg-slate-800 ring-1 dark:ring-slate-700"
+                ? "bg-slate-300/50 dark:bg-slate-800 ring-1 ring-gray-500/50 dark:ring-slate-700"
                 : ""
             )}
             key={menuItem.id}
