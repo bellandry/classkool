@@ -2,9 +2,10 @@
 "use client";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
+import openSheetReducer from "./slices/open-close-sheet";
 
 const rootReducer = combineReducers({
-  //add all your reducers here
+  openSheet: openSheetReducer,
 });
 
 export const store = configureStore({

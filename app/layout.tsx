@@ -3,7 +3,7 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { ReduxProvider } from "@/redux/provider";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, GoogleOneTap } from "@clerk/nextjs";
 import { Poppins } from "next/font/google";
 import { Toaster } from "sonner";
 
@@ -25,20 +25,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="fr">
-        <body className={`${poppins.variable} antialiased`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
+    <html lang="fr">
+      <ClerkProvider>
+        <GoogleOneTap />
+        <body
+          className={`${poppins.variable} antialiased dark:bg-gray-950 bg-slate-100 text-gray-950 dark:text-slate-200`}
+        >
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <ReduxProvider>{children}</ReduxProvider>
             <Toaster expand />
           </ThemeProvider>
         </body>
-      </html>
-    </ClerkProvider>
+      </ClerkProvider>
+    </html>
   );
 }
