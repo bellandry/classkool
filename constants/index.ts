@@ -2,7 +2,7 @@ import { ConstantsMenuProps, LANDING_PAGE_MENU } from "./menu";
 import {
   CREATE_GROUP_PLACEHOLDER,
   createGroupPlaceholderProps,
-} from "./placeholde";
+} from "./placeholder";
 
 type ConstantsProps = {
   landingPageMenu: ConstantsMenuProps[];
